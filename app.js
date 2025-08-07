@@ -24,7 +24,7 @@ app.post("/voc/send-email", async (req, res) => {
 
     await transporter.sendMail({
       from: "jaseeldevops@gmail.com",
-      to: "jaseelmanamulli@gmail.com",
+      to: "arakkalfaris@gmail.com",
       subject: "VOC New Contact Form Submission",
       text: "",
       html: message,

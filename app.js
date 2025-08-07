@@ -22,25 +22,25 @@ app.post("/voc/send-email", async (req, res) => {
       auth: { user: process.env.EMAIL, pass: process.env.PASSWORD },
     });
 
+    await transporter.sendMail({
+      from: "jaseeldevops@gmail.com",
+      to: "jaseelmanamulli@gmail.com",
+      subject: "VOC New Contact Form Submission",
+      text: "",
+      html: message,
+    });
+
+    await transporter.sendMail({
+      from: "jaseeldevops@gmail.com",
+      to: "jaseelmanamulli@gmail.com",
+      subject: "VOC New Contact Form Submission",
+      text: "",
+      html: message,
+    });
+
     res
       .status(200)
       .send({ success: true, message: "Email sent successfully!" });
-
-    await transporter.sendMail({
-      from: "jaseeldevops@gmail.com",
-      to: "jaseelmanamulli@gmail.com",
-      subject: "VOC New Contact Form Submission",
-      text: "",
-      html: message,
-    });
-
-    await transporter.sendMail({
-      from: "jaseeldevops@gmail.com",
-      to: "jaseelmanamulli@gmail.com",
-      subject: "VOC New Contact Form Submission",
-      text: "",
-      html: message,
-    });
   } catch (error) {
     console.error(error);
     res.status(500).send({ success: false, message: "Failed to send email." });

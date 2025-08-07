@@ -9,7 +9,10 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// POST API to send email
+app.get("", async (req, res) => {
+  res.send("v0.0.1 " + process.env.EMAIL);
+});
+
 app.post("/voc/send-email", async (req, res) => {
   const { message } = req.body;
 

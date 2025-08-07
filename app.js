@@ -27,7 +27,8 @@ app.post("/voc/send-email", async (req, res) => {
       from: "jaseeldevops@gmail.com",
       to: "jaseelmanamulli@gmail.com",
       subject: "VOC New Contact Form Submission",
-      text: message,
+      text: "",
+      html: message,
     });
 
     await transporter.sendMail({
@@ -46,5 +47,3 @@ app.post("/voc/send-email", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
-
-console.log(process.env.EMAIL, process.env.PASSWORD);
